@@ -98,7 +98,7 @@ new_avg_steps_at_time<-new_data%>%group_by(interval,wDay)%>%
   summarize(steps = mean(steps))%>%arrange(wDay)
 
 times2<-c(times,times)
-ggplot(data=new_avg_steps_at_time,aes(x=times2, y=steps, group=1))+geom_line()+facet_grid(wDay ~ .)+scale_x_datetime(labels = date_format("%H:%M"))+facet_grid(wDay ~ .)+ggtitle("Average Steps per 5 min Interval on Weekends and Weekdasy")+ylab("Time of Day")+xlab("Avg Number of Steps")
+ggplot(data=new_avg_steps_at_time,aes(x=times2, y=steps, group=1))+geom_line()+facet_grid(wDay ~ .)+scale_x_datetime(labels = date_format("%H:%M"))+facet_grid(wDay ~ .)+ggtitle("Average Steps per 5 min Interval on Weekends and Weekdays")+ylab("Time of Day")+xlab("Avg Number of Steps")
 ```
 
 Observing the two distributions side by side, we see more activity during business hours on the weekends than on weekdays, which confirms the natural intuition assuming the subject is a normal office worker.
